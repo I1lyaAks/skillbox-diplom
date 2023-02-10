@@ -32,7 +32,7 @@ type ResultSetT struct {
 
 func Start() {
 	router := mux.NewRouter()
-	router.HandleFunc("/", handleConnection).Methods("GET")
+	router.HandleFunc("/api", handleConnection).Methods("GET")
 	http.ListenAndServe("127.0.0.1:8282", router)
 }
 func handleConnection(w http.ResponseWriter, r *http.Request) {
